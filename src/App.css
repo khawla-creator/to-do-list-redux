@@ -1,0 +1,131 @@
+.App {
+  margin-left: 50px;
+  margin-right: 50px;
+  text-align: center;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(
+    190deg, #61c7e6 0%, #e61476 100%
+);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap');
+
+* {
+  font-family: 'Hachi Maru Pop', cursive;
+
+}
+
+h1 {
+  padding-top: 10px;
+  text-shadow: 0  0 5px #433aa8, 3px -1px 5px #271c6c;
+  color : white;
+}
+
+.addTodos {
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.todo-input {
+  width: 350px;
+  height: 20px;
+  padding: 5px;
+  margin-right : 10px;
+  border: none;
+  border-radius: 7px;
+  background-color: white;
+  box-shadow:1px 1px 10px #5445aa;
+  color : #352b6b
+}
+
+.add-btn {
+  background-color:white;
+  border: none ;
+  height: 33px;
+  width: 33px;
+  /* border:2px solid #5445aa; */
+  border-radius: 50%;
+  color : #433aa8;
+  box-shadow: 2px 2px 10px  #5441c0;
+  cursor: pointer;
+}
+
+
+.displaytodos {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.displaytodos .buttons {
+  display: flex;
+  justify-content:center;
+  margin-top: 10px;
+}
+
+
+
+.displaytodos .buttons button {
+  margin-left: 20px;
+  margin-right: 40px;
+  border:none;
+  border-radius : 40px;
+  padding : 7px 20px ;
+  margin : 10px;
+  background-color: white;
+  color: #352b6b;
+  cursor: pointer;
+  font-weight: bolder;
+  box-shadow: 4px 4px 10px  #5445aa;
+}
+
+.displaytodos ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+li {
+  list-style: none;
+}
+
+.card {
+  background-color: rgba(225, 170, 196, 0.761) ;
+  margin : 0 1rem 1rem 0 ;
+  height : 8rem;
+  width: 18rem;
+  border-radius : 0.5rem;
+  padding : 1rem;
+  position: relative
+  
+}
+
+.card textarea {
+  background-color:transparent ;
+  border: none;
+  border-radius: 10px;
+  width: 87%;
+  height: 60%;
+  color: #271c6c;
+  padding: 0.5rem;
+}
+
+
+
+.btns {
+position:absolute;
+bottom: 10px;
+right:20px;
+}
+
+.btns button {
+  cursor: pointer;
+border: none;
+background-color: transparent;
+font-size: 1.4em;
+  }
+
+
+
+
+
