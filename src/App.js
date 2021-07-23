@@ -1,15 +1,28 @@
-
-import Todos from './componenets/Todos'
+import { motion } from "framer-motion";
+import Todos from "./componenets/Todos";
 import DisplayTodos from "./componenets/DisplayTodos";
-
 
 function App() {
   return (
     <div className="App">
-      <h1> Todo App</h1>
-            <Todos/>
-            <DisplayTodos/>
+      <motion.h1
+        initial={{ y: -200 }}
+        animate={{ y: 0 }}
+        transition={{ type: "spring", duration: 1 }}
+        whileHover={{ scale: 1.1 }}
+      >
+        Todo App
+      </motion.h1>
+      <motion.div
+        initial={{ y: 1000 }}
+        animate={{ y: 0 }}
+        transition={{ type: "spring", duration: 1.5 }}
+        whileHover={{ scale: 1.1 }}
+      >
+        <Todos />
+        <DisplayTodos />
+      </motion.div>
     </div>
   );
 }
- export default App;
+export default App;
