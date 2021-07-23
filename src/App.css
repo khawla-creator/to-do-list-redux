@@ -84,6 +84,7 @@ h1 {
 
 .displaytodos ul {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   list-style: none;
 }
@@ -91,7 +92,7 @@ h1 {
 
 
 .card {
-  background-color: rgba(225, 170, 196, 0.761);
+  background-color: rgba(225, 180, 200, 0.9);
   margin: 0 1rem 1rem 0;
   height: 8rem;
   width: 18rem;
