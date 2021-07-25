@@ -1,54 +1,62 @@
-import React, {useState} from "react";
-import {connect} from 'react-redux';
-import {addTodos, removeTodos, updateTodos,completeTodos} from '../redux/reducer.js';
-import {GoPlus} from 'react-icons/go'
-
-const mapStateToProps = (state) =>{
-  return { 
-    todos : state,
-  }
+import React, { useState } from "react";
+import { connect } from "react-redux";
+import { addTodos } from "../redux/reducer.js";
+import { GoPlus } from "react-icons/go";
+import { motion } from "framer-motion";
+// import {removeTodos, updateTodos,completeTodos} from '../redux/reducer'
+const mapStateToProps = (state) => {
+  return {
+    todos: state
   };
-  
-  const mapDispatchToProps = (dispatch) => {
-    return {
-      addTodo : (obj) => dispatch(addTodos(obj)),
-      removeTodo : (id) => dispatch(removeTodos(id)),
-      updateTodo : (obj) => dispatch(updateTodos(obj)),
-      completeTodo: (id) => dispatch(completeTodos(id)),
-  
-    };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addTodo: (obj) => dispatch(addTodos(obj))
+    // removeTodo : (id) => dispatch(removeTodos(id)),
+    // updateTodo : (obj) => dispatch(updateTodos(obj)),
+    // completeTodo: (id) => dispatch(completeTodos(id)),
   };
+};
 
-const Todos = (props)=> { 
-   const [todo, setTodo]=useState('');
-   
-   const handelChnage=(e)=> {
-        setTodo (e.target.value);
-   };
+const Todos = (props) => {
+  const [todo, setTodo] = useState("");
 
+  const handelChnage = (e) => {
+    setTodo(e.target.value);
+  };
+  const add = () => {
+    if (todo === "") {
+      return alert("input is Empty");
+    } else {
+      props.addTodo({
+        id: Math.floor(Math.random() * 1000),
+        item: todo,
+        completed: false
+      });
+      setTodo(" ");
+    }
+  };
   return (
-    <div className="addTodos" > 
-        <input 
-        type =" text" 
-        placeholder=" add your todo " 
+    <div className="addTodos">
+      <input
+        type=" text"
+        placeholder=" add your todo "
         className="todo-input"
-        onChange= { (e)=> handelChnage(e)}
-        />
+        onChange={(e) => handelChnage(e)}
+        value={todo}
+      />
 
-    <button className="add-btn"
-          onClick= {()=> props.addTodo({
-            id: Math.random(),
-            item: todo,
-            completed : false,
-          }) 
-          }> <GoPlus/></button>
-          
-          
+      <motion.button
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        className="add-btn"
+        onClick={() => add()}
+      >
+        <GoPlus />
+      </motion.button>
     </div>
   );
 };
 
-export default connect (mapStateToProps, mapDispatchToProps) (Todos);
-
-
-
+export default connect(mapStateToProps, mapDispatchToProps)(Todos);
